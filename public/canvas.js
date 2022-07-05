@@ -24,7 +24,7 @@ undoBtn.addEventListener("click", function (e) {
     trackValue: tracker,
     undoRedoTracker,
   };
-  socket.emit("undo-action",obj);
+  socket.emit("undoRedo-action",obj);
 });
 
 redoBtn.addEventListener("click", function (e) {
@@ -33,7 +33,7 @@ redoBtn.addEventListener("click", function (e) {
     trackValue: tracker,
     undoRedoTracker,
   };
-  socket.emit("redo-action",obj);
+  socket.emit("undoRedo-action",obj);
 });
 
 function undoRedoCanvas(trackObj) {
@@ -110,10 +110,6 @@ socket.on("drawPath",function(data){
   drawPath(data);
 });
 
-socket.on("undo-action",function(obj){
-  undoRedoCanvas(obj);
-});
-
-socket.on("redo-action",function(obj){
+socket.on("undoRedo-action",function(obj){
   undoRedoCanvas(obj);
 });

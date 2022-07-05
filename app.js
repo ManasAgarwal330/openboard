@@ -13,6 +13,7 @@ let server = app.listen(port,function(e){
 let io = socket(server);
 
 io.on("connection",function(socket){
+    console.log("connected");
     socket.on("beginPath",function(obj){
         io.sockets.emit("beginPath",obj);
     })
@@ -20,4 +21,9 @@ io.on("connection",function(socket){
     socket.on("drawPath",function(obj){
         io.sockets.emit("drawPath",obj);
     })
+
+    socket.on("undoRedo-action",function(obj){
+        io.sockets.emit("undoRedo-action",obj);
+    });
+
 })
