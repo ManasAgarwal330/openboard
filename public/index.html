@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>OpenBoard</title>
+  </head>
+  <body>
+    <div class="toggle-cont">
+      <span class="material-symbols-outlined toggle"> menu </span>
+    </div>
+
+    <div class="tools-cont">
+      <div class="pencil-cont">
+        <span class="material-symbols-outlined pencil"> edit </span>
+      </div>
+      <div class="eraser-cont">
+        <span class="material-symbols-outlined eraser"> crop_5_4 </span>
+      </div>
+      <div class="upload-cont">
+        <span class="material-symbols-outlined upload"> file_upload </span>
+      </div>
+      <div class="download-cont">
+        <span class="material-symbols-outlined download"> download </span>
+      </div>
+      <div class="sticky-cont">
+        <span class="material-symbols-outlined sticky"> sticky_note_2 </span>
+      </div>
+      <div class="undo-cont">
+        <span class="material-symbols-outlined undo"> undo </span>
+      </div>
+      <div class="redo-cont">
+        <span class="material-symbols-outlined redo"> redo </span>
+      </div>
+    </div>
+
+    <div class="pencil-tool-cont">
+      <div class="range-cont">
+        <input type="range" class="range" value="3" min="1" max="10" />
+      </div>
+      <div class="color-cont">
+        <div class="black"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+      </div>
+    </div>
+    <div class="eraser-tool-cont">
+      <input type="range" class="range" min="10" max="100" value="10" />
+    </div>
+    <canvas></canvas>
+  </body>
+  <script src="https://cdn.socket.io/4.2.0/socket.io.min.js" integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj" crossorigin="anonymous"></script>
+  <script>
+    let socket = io.connect("http://localhost:5000");
+  </script>
+  <script src="./canvas.js"></script>
+  <script src="./script.js"></script>
+</html>
